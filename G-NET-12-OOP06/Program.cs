@@ -41,7 +41,43 @@ namespace G_NET_12_OOP06
             */
             #endregion
 
+            #region Q 02
 
+            /*
+             
+            Methods Implementation  /// 
+
+           Abstract class: Can contain both abstract methods and methods with implementation.
+
+          Interface: Contains only method declarations(no implementation).
+
+          Fields / Variables
+
+          Abstract class: Can have fields (variables).
+
+          Interface: Cannot have instance fields.
+
+          Constructors   ///
+
+          Abstract class: Can have constructors.
+
+          Interface: Cannot have constructors.
+
+          Inheritance  ///
+
+          Abstract class: A class can inherit from only one abstract class.
+
+          Interface: A class can implement multiple interfaces.
+
+          When to choose each one  ///
+
+         Choose an abstract class when classes share common behavior or code that can be reused.
+
+         Choose an interface when you want to define a contract that different classes must follow, even if they are not related.
+
+            */
+
+            #endregion
 
 
             #endregion
