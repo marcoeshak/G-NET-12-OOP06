@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Numerics;
+using System.Reflection.Emit;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -79,12 +80,83 @@ namespace G_NET_12_OOP06
 
             #endregion
 
+            #region Q 03
+            /* 
+             
+            A)       //////
 
-            #endregion
+            No, you cannot.
+
+            Because Appliance is an abstract class, and abstract classes cannot be instantiated.
+                They are only used as base classes for other classes.
+            You must create an object from a derived class
+            */
+           
+            /*
+             
+            B)   ////////
+
+                1)
+
+                public abstract double PowerConsumption();   ////
+
+               It is an abstract method.
+
+             It has no implementation in the base class.
+
+            Every derived class must override it.
+
+            Reason:
+            Each appliance has a different power consumption, so the base class cannot define a single implementation.
+
+
+            2)
+
+            public virtual string Status() => "Standby";    ///
+
+            It is a virtual method.
+
+             It has a default implementation.
+
+             Derived classes can override it if needed.
+
+             Reason:
+              Most appliances may be Standby, but some appliances may have a different status(like WashingMachine).
+
+
+            3)
+
+            public string Label() => $"{Brand} - {PowerConsumption()}W";   ///
+
+
+             It is a concrete method.
+
+            It already has a full implementation.
+    
+            Derived classes do not need to override it.
+
+            Reason:
+            The same label format works for all appliances.
+            */
+
+            /*
+             
+            C)
+
+            It will return:
+
+            Standby
+            Because the Toaster class does not override the Status() method, so it uses the default implementation from the Appliance class.
+           
+            */
+
+        #endregion
+
+        #endregion
 
 
 
 
-        }
+    }
     }
 }
