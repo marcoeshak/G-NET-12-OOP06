@@ -9,6 +9,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Timers;
+using static G_NET_12_OOP06.Program;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace G_NET_12_OOP06
@@ -235,9 +236,205 @@ namespace G_NET_12_OOP06
 
             #endregion
 
+            #region Part 2
+
+            /*
+             
+            //  Ticket.cs 
+            // Base abstract class for all ticket types
+            public abstract class Ticket
+            {
+            public int Id { get; }
+            public string Movie { get; }
+            public double Price { get; }
+            public bool IsBooked { get; private set; }
+
+            protected Ticket(int id, string movie, double price)
+            {
+                Id = id;
+                Movie = movie;
+                Price = price;
+            }
+
+            // Abstract method → must be implemented differently by each ticket type
+            public abstract double CalculateFinalPrice();
+
+            // Virtual method → can be overridden optionally
+            public virtual string Category()
+            {
+                return "General";
+            }
+
+            // Concrete methods → shared across all tickets
+            public void Book() => IsBooked = true;
+            public void Cancel() => IsBooked = false;
+             }
+
+             //  StandardTicket.cs 
+             public class StandardTicket : Ticket
+                {
+            public string Seat { get; }
+
+            public StandardTicket(int id, string movie, double price, string seat)
+                : base(id, movie, price)
+            {
+                Seat = seat;
+            }
+
+            public override double CalculateFinalPrice() => Price * 1.14;
+
+            public override string Category() => "Standard";
+              }
+
+              //  VIPTicket.cs 
+             public class VIPTicket : Ticket
+            {
+            public bool LoungeAccess { get; }
+            public double Fee { get; }
+
+            public VIPTicket(int id, string movie, double price, bool loungeAccess, double fee)
+                : base(id, movie, price)
+            {
+                LoungeAccess = loungeAccess;
+                Fee = fee;
+            }
+
+            public override double CalculateFinalPrice() => (Price + Fee) * 1.14;
+
+            public override string Category() => "VIP";
+             }
+
+             //  IMAXTicket.cs 
+             public class IMAXTicket : Ticket
+             {
+            public bool Is3D { get; }
+
+            public IMAXTicket(int id, string movie, double price, bool is3D)
+                : base(id, movie, price)
+            {
+                Is3D = is3D;
+            }
+
+            public override double CalculateFinalPrice() => Price * 1.14;
+
+            public override string Category() => "IMAX";
+             }
+
+            //  Cinema.Tickets.cs 
+            using System;
+            using System.Collections.Generic;
+
+            public partial class Cinema
+               {
+            private List<Ticket> tickets = new List<Ticket>();
+
+            public void AddTicket(Ticket ticket) => tickets.Add(ticket);
+
+            public Ticket[] GetTickets() => tickets.ToArray();
+
+            public void OpenCinema()
+            {
+            Console.WriteLine("=== Cinema Opened ===");
+            Console.WriteLine("Projector ON\n");
+            }
+
+             public void CloseCinema()
+            {
+            Console.WriteLine("\nProjector OFF");
+            Console.WriteLine("=== Cinema Closed ===");
+             }
+            }
+
+            //  Cinema.Reporting.cs 
+            using System;
+
+            public partial class Cinema
+                {
+              public void PrintAllTickets()
+             {
+             Console.WriteLine("--- All Tickets (from Cinema.Reporting) ---");
+
+            foreach (var t in tickets)
+            {
+                Console.WriteLine(
+                    $"[Ticket #{t.Id}] {t.Movie} | {t.Category()} | " +
+                    $"Price: {t.Price} | Final: {t.CalculateFinalPrice():F2} | " +
+                    $"Booked: {(t.IsBooked ? "Yes" : "No")}"
+                );
+            }
+
+            Console.WriteLine();
+                 }
+             }
+
+            //  TicketExtensions.cs 
+            using System;
+            using System.Linq;
+
+            public static class TicketExtensions
+               {
+           // Generate formatted receipt for a single ticket
+          public static string GenerateReceipt(this Ticket ticket)
+              {
+            return
+               $@"========== RECEIPT ==========
+             Movie    : {ticket.Movie}
+             Type     : {ticket.GetType().Name}
+             Price    : {ticket.Price}
+              Final    : {ticket.CalculateFinalPrice():F2}
+              Status   : {(ticket.IsBooked ? "Booked" : "Not Booked")}
+                =============================";
+               }
+
+              // Calculate total revenue from an array of tickets
+            public static double TotalRevenue(this Ticket[] tickets) => tickets.Sum(t => t.CalculateFinalPrice());
+                 }
+
+            //  Program.cs 
+            using System;
+
+            class Program
+              {
+           static void Main()
+           {
+             Cinema cinema = new Cinema();
+             cinema.OpenCinema();
+
+            // Ticket t = new Ticket(0, "Test", 100); // ERROR: Cannot create instance of abstract class
+
+            Ticket t1 = new StandardTicket(1, "Inception", 80, "A5");
+            Ticket t2 = new VIPTicket(2, "Avengers", 200, true, 50);
+            Ticket t3 = new IMAXTicket(3, "Dune", 130, true);
+
+            t1.Book();
+            t2.Book();
+            t3.Book();
+
+            cinema.AddTicket(t1);
+            cinema.AddTicket(t2);
+            cinema.AddTicket(t3);
+
+            cinema.PrintAllTickets();
+
+            Console.WriteLine("--- Polymorphism: Final Price per Ticket ---");
+            Ticket[] tickets = { t1, t2, t3 };
+            foreach (var t in tickets)
+                Console.WriteLine($"{t.GetType().Name} => Final Price: {t.CalculateFinalPrice():F2}");
+
+            Console.WriteLine("\n--- Extension Method: Receipt ---");
+            Console.WriteLine(t2.GenerateReceipt());
+
+            Console.WriteLine("\n--- Extension Method: Total Revenue ---");
+            Console.WriteLine($"Total Revenue: {tickets.TotalRevenue():F2}");
+
+            cinema.CloseCinema();
+                 }
+                }
+
+               */
+            #endregion
 
 
-
-        }
+       }
     }
 }
