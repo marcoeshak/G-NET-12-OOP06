@@ -1,10 +1,14 @@
 ﻿
+using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Numerics;
 using System.Reflection.Emit;
+using System.Reflection.Metadata;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
+using System.Text;
+using System.Timers;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace G_NET_12_OOP06
@@ -91,7 +95,7 @@ namespace G_NET_12_OOP06
                 They are only used as base classes for other classes.
             You must create an object from a derived class
             */
-           
+
             /*
              
             B)   ////////
@@ -150,13 +154,90 @@ namespace G_NET_12_OOP06
            
             */
 
-        #endregion
+            #endregion
 
-        #endregion
+            #region Q 04
+            /*
+           A)   ////
+           A partial class is a class whose definition can be split across multiple files, but the compiler combines them into one class at compile time.
+
+           Developers split a class into multiple files to:
+
+           Organize large classes
+
+           Separate different responsibilities
+
+           Allow multiple developers to work on the same class
+
+           In this example:
+
+           Calculator.cs contains the main logic
+
+           Calculator.Logging.cs contains the logging functionality
+
+           */
+
+            /*
+             
+            B)
+             
+                A partial method is a method that is declared in one part of a partial class and optionally implemented in another part.
+
+            Example    ///
+
+            partial void OnCalculated(double result);
+
+             If the implementation in Calculator.Logging.cs is deleted, the code will still compile.
+
+             This is because partial methods are optional, and if they are not implemented, the compiler removes the method call completely.
+           
+            */
+
+            /*
+             
+            C)
+
+            An extension method allows you to add new methods to an existing class without modifying the original class.
+
+            Example:   ///
+
+            public static string ToCurrency(this double value)
+            Rules for extension methods:
+
+            The method must be inside a static class.
+
+            The method itself must be static.
+
+            The first parameter must use the this keyword to specify the type being extended.
+
+            */
+
+            /*
+             
+            D)
+
+                     Add(19.5, 0.5)    ///  1
+                    Result = 20  ///
+
+                OnCalculated() runs and prints:  // 2
+                Log: result = 20   //
+
+                ToCurrency() formats the result as currency   /// 3
+                    $20.00   //
+
+                Final Output
+                Log: result = 20
+                $20.00
+                
+                */
+
+            #endregion
+
+            #endregion
 
 
 
 
-    }
+        }
     }
 }
