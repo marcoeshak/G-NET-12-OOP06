@@ -1,11 +1,54 @@
 ﻿
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Numerics;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.Intrinsics.X86;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace G_NET_12_OOP06
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            #region Part 1
+
+            #region Q 01
+            /*
+        Abstraction:
+            Abstraction is the concept of hiding complex implementation details and showing only the essential features of an object.It focuses on what an object does rather than how it does it.
+
+        Encapsulation:
+            Encapsulation is the process of wrapping data(variables) and methods(functions) together inside a class and restricting direct access to some of the object's components using access modifiers like private, public, etc.
+
+         Difference between Abstraction and Encapsulation:
+
+         Abstraction hides unnecessary details and shows only the required functionality.
+
+         Encapsulation protects the data by restricting direct access and allowing it through methods.
+
+          Real - world example:
+          Consider a car .
+
+        Abstraction: When you drive a car, you only use the steering wheel, pedals, and gear.You don't need to know how the engine or transmission works internally. The complex details are hidden from you.
+
+         Encapsulation: Inside the car system, the engine data and operations are kept together, and you cannot directly modify them.You interact with the car through controls like the accelerator or brake, which safely manage how the internal system behaves.
+
+         So, abstraction hides complexity, while encapsulation protects data and controls access to it.
+
+            */
+            #endregion
+
+
+
+
+            #endregion
+
+
+
+
         }
     }
 }
